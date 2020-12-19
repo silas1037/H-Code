@@ -1,0 +1,88 @@
+﻿Willplus通用（？）特殊码，【/HQN-8*0@87E0:AdvHD.exe】
+提取翻译RPG Maker MV 游戏的方法在贴吧置顶帖
+
+
+
+=-=-=-=-=-=-==-==-=-=-=-=-=-==-==-=-=-=-=-=-==-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+自动提取部分游戏在不同电脑下不同偏移值的特殊码
+
+	[190908]自动计算GetTextExtentPoint32A偏移量工具[贴吧-以往提供].exe
+	下载地址:
+		https://waecy2.pipipan.com/fs/770007-396957803
+	
+前提:不适用所有社游戏,已知以下社可使用此工具计算:
+
+	[Galette]
+	[Sweet HEART]
+	[FrontWing]
+	[SkyFish]
+	[G.J?] 
+	[熟れ専]
+	[えにしそふと]
+	[ウシミツソフト]
+	[Key]
+	[onomatope]
+	[onomatope＊raspberry]
+	[色仕掛けまとめブログ]
+	[Qruppo]
+
+	PS:只要需要x64dbg提取gdi32.dll偏移值.用GetTextExtentPoint32A得到的值,减去gdi32.dll偏移值,就得到特殊码中间的数字了...
+
+		比如
+			/HA8:4@【偏移值相减】:gdi32.dll
+		    	/HS8@【偏移值相减】:gdi32.dll
+
+	同一社格式前面相同,后缀:gdi32.dll也相同的,只要把中间数字替换就好...
+	
+
+x64dbg提取gdi32.dll偏移值,看以下教程:
+
+	特殊码获取，自己动手，丰衣足食
+	http://tieba.baidu.com/p/6108716713
+
+	GetTextExtentPoint32A偏移值: 760A5620
+	gdi32.dll偏移值: 760A0000
+	相减结果: 5620
+	
+	在线十六进制数字减法:
+		http://www.ab126.com/system/2858.html
+		https://www.osgeo.cn/app/s2858
+		http://www.99cankao.com/digital-computation/hex-calculator.php
+
+	软件计算:
+	逆向工程计算器(Reversers Calculator)1.2汉化版.exe
+
+	下载地址:
+		https://waecy2.pipipan.com/fs/770007-396961316
+
+=-=-=-=-=-=-==-==-=-=-=-=-=-==-==-=-=-=-=-=-==-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+碧池系列(手动提取)：
+简单翻译一下就是因为系统的原因，gdi32.dll的函数值不一样，所以相关的特殊码都不能通用，需要自己找到对应的函数值，然后再换算出来。（不难，按照教程下一个x64dbg就可以了，十六位加减电脑计算器就可以）
+我这里的特殊码是【/HS8@2EC0B:gdi32.dll】，可以运行
+
+1.下一个x64dbg
+2.打开其中的x32dbg，附加（attach）这个游戏
+3.工具栏下方有一行分页，点击符号（symbol）
+4.在左边找到gdi32.dll，选中，同时记录下地址
+5.在右边找到GetTextExtentPoint32A，记录下另一个地址。
+6.用右边减去左边的，得到一个值x（十六位进制减法，可以百度找在线工具或者用电脑自带的计算器）
+特殊吗就是/HS8@x:GDI32.dll
+
+
+PS:WillPlus不可能有什么通用特殊码，只要EXE版本升级就要换
+=-=-=-=-=-=-==-==-=-=-=-=-=-==-==-=-=-=-=-=-==-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+mono引擎特殊码
+
+步骤如下
+1.将VNR目录下Visual Novel Reader\Library\Frameworks\Sakura\py\libs\gameengine，把gameengine这个目录改名，改成gameengine1之类的都行
+2.在VNR中使用特殊码【/HW-10@153D:mono.dll】
+=-=-=-=-=-=-==-==-=-=-=-=-=-==-==-=-=-=-=-=-==-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+WOLF RPG Editor
+略称:ウディタ(Woditor)
+简称:狼头RPG
+
+v2.21的版本是
+【/HS*4@4C085F】
+贴吧@soskp1 提供
+
+
